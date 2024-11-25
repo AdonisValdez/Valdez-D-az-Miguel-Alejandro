@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFTWARE.VALDEZ MIGUEL👨‍💻</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #3494E6, #EC6EAD);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            padding: 30px;
+            transform: rotateX(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            transform: rotateX(0deg) scale(1.02);
+        }
+
+        .titulo {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .columnas {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .columna {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .columna:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .imagen-fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .columna:hover .imagen-fondo {
+            transform: scale(1.1);
+        }
+
+        .contenido {
+            position: relative;
+            z-index: 2;
+        }
+
+        .columna h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #3494E6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .columna h2 i {
+            margin-right: 10px;
+        }
+
+        .tarjeta {
+            background: rgba(244, 244, 244, 0.8);
+            border-left: 5px solid #3494E6;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .tarjeta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-15deg);
+        }
+
+        .tarjeta h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .tarjeta p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-contenido {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .cerrar {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .columnas {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Trabajo Autonomo - Organizador Grafico Interactivo 🧠</h1>
+        <div class="columnas">
+            <div class="columna" onclick="abrirModal('razonamiento')">
+                <div class="imagen-fondo" style="background-image: url(https://images.unsplash.com/photo-1516321497487-e288fb19713f);"></div>
+
+                <div class="contenido">
+                    <h2><i class="fas fa-puzzle-piece"></i>Razonamiento Abstracto</h2>
+                    <div class="tarjeta">
+                        <h3>¿Qué es?</h3>
+                        <p>Claro, mira, el razonamiento abstracto es básicamente esa habilidad de ver más allá de lo obvio. Es como cuando ves un patrón o una conexión en algo que a simple vista no parece estar relacionado. No necesitas datos concretos para entenderlo, sino que trabajas con ideas o conceptos más generales.💻</p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Estrategias de Mejora</h3>
+                        <p>Practicar rompecabezas, sudokus y juegos que desafíen mi capacidad de análisis y conexión entre conceptos diferentes.📐</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="columna" onclick="abrirModal('pensamiento')">
+                <div class="imagen-fondo" style="background-image: url(https://images.unsplash.com/photo-1516321497487-e288fb19713f);"></div>
+                <div class="contenido">
+                    <h2><i class="fas fa-brain"></i>Pensamiento Abstracto</h2>
+                    <div class="tarjeta">
+                        <h3>Mi Definición</h3>
+                        <p>Es mi superpoder para entender conceptos complejos o dificiles llamalo como quieres, tambien sirve para interpretar símbolos y crear conexiones mentales únicas que van más allá de lo literal.🧩</p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Técnicas de Desarrollo</h3>
+                        <p>Leer filosofía, escribir metáforas, analizar obras de arte y practicar meditación para expandir mi comprensión conceptual.📚</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="columna" onclick="abrirModal('series')">
+                <div class="imagen-fondo" style="background-image: url(https://unsplash.com/es/fotos/un-lapiz-sobre-una-hoja-de-papel-junto-a-una-regla-Z2wO6-_c1wA);"></div>
+                <div class="contenido">
+                    <h2><i class="fas fa-sort-numeric-up"></i>Series Numéricas Cortas y Largas</h2>
+                    <div class="tarjeta">
+                        <h3>Fundamentos</h3>
+                        <p>Es un método matemático fascinante para identificar patrones y secuencias ocultas de muchas formas para mi persona es fascinate. Como un detective descifrando códigos numéricos increible. 🕵️</p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Técnicas de Práctica</h3>
+                        <p>Resolver problemas de secuencias matemáticas, usar apps de entrenamiento mental y participar en desafíos que requieran identificación de patrones, ahora nos vamos a referir ahora a series numericas CORTAS Y LARGAS.📏</p>   
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <div id="contenido-modal"></div>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal(tipo) {
+            const modal = document.getElementById('modal');
+            const contenidoModal = document.getElementById('contenido-modal');
+            
+            const contenidos = {
+                razonamiento: `
+                    <h2>Razonamiento Abstracto: Profundizando</h2>
+                    <img src="https://www.nibcode.com/images/products/psyapp/abstract-example1.gif" alt="Razonamiento Abstracto" style="max-width:100%; height:auto; margin-bottom:20px;">
+                    <p>🔴El razonamiento abstracto es una habilidad cognitiva que me permite:</p>
+                    <ul>
+                        <li>Resolver problemas complejos sin información concreta</li>
+                        <li>Identificar patrones y conexiones no evidentes</li>
+                        <li>Desarrollar soluciones creativas e innovadoras</li>
+                    <img src="https://altopuntaje.com/wp-content/uploads/2021/05/razonamiento-abstracto-pregunta-3.webp">
+                    </ul>
+                `,
+                pensamiento: `
+                    <h2>Pensamiento Abstracto: Mi Viaje Mental</h2>
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="Pensamiento Abstracto" style="max-width:100%; height:auto; margin-bottom:20px;">
+                    <p>🔴Mis estrategias para desarrollar un pensamiento abstracto incluyen:</p>
+                    <ul>
+                        <li>Explorar conceptos filosóficos complejos</li>
+                        <li>Practicar la interpretación de símbolos y metáforas</li>
+                        <li>Conectar ideas de diferentes disciplinas</li>
+                    <img src="https://img.freepik.com/vector-premium/ilustracion-vector-concepto-abstracto-pensamiento_107173-24960.jpg?w=740" width="600" height="400">
+                    </ul>
+                `,
+                series: `
+                    <h2>Series Numéricas: Cortas y Largas</h2>
+                    <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6" alt="Series Numéricas" style="max-width:100%; height:auto; margin-bottom:20px;">
+                    <p>🔴SERIES NUMERICAS CORTAS Y LARGAS CONCEPTO:</p>
+                    <ul>
+                        <li>Una serie numérica Larga, dicho de manera sencilla, es una lista de números que sigue un patrón y tiene muchos términos o incluso no termina nunca.📐
+
+                        <li>En cambio una serie numerica Corta son fáciles de manejar, con pocos términos, y se pueden analizar sin necesidad de una fórmula compleja. Estas series ayudan a aprender y practicar conceptos matemáticos.📐</li>
+                    <img src="https://i.ytimg.com/vi/YkzRtsIjqWI/maxresdefault.jpg" width="600" height="400">    
+                    </ul>
+                `
+            };
+
+            contenidoModal.innerHTML = contenidos[tipo];
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        // Efectos de interacción para tarjetas
+        document.querySelectorAll('.tarjeta').forEach(tarjeta => {
+            tarjeta.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+            });
+
+            tarjeta.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
